@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ProManage - Project Management Dashboard</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">P</div>
+            <div>
+                <h2>ProManage</h2>
+                <span>Plan • Track • Deliver</span>
+            </div>
+        </div>
+
+        <div class="profile">
+            <div class="avatar">A</div>
+            <div>
+                <strong>Aryan Sharma</strong>
+                <small>Project Manager</small>
+                <span class="online">● Online</span>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#" class="active">🏠 Dashboard</a>
+            <a href="#">📁 Projects</a>
+            <a href="#">▦ Kanban Board</a>
+            <a href="#">☷ Timeline / Gantt</a>
+            <a href="#">📅 Calendar</a>
+            <a href="#">🔄 Sprints</a>
+            <a href="#">👥 Team</a>
+            <a href="#">📎 Files</a>
+            <a href="#">📊 Reports</a>
+            <a href="#">🔔 Notifications</a>
+            <a href="#">⚙ Settings</a>
+        </nav>
+
+        <div class="quick-create">
+            <h4>Quick Create</h4>
+
+            <button>＋ New Project</button>
+            <button>＋ New Task</button>
+            <button>＋ New Sprint</button>
+        </div>
+
+        <div class="project-summary">
+            <h4>Project Summary</h4>
+
+            <p>Total Projects <strong>12</strong></p>
+            <p>Active Tasks <strong>45</strong></p>
+            <p>Completed Tasks <strong>28</strong></p>
+            <p>Team Members <strong>16</strong></p>
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main">
+
+        <!-- HEADER -->
+        <header class="topbar">
+
+            <div>
+                <h1>Project Management Dashboard</h1>
+                <p>Plan projects, manage tasks, track progress and deliver successfully.</p>
+            </div>
+
+            <div class="top-actions">
+                <input type="text" placeholder="Search projects, tasks...">
+                <button>🔔</button>
+                <button>💬</button>
+                <button class="new-project">＋ New Project</button>
+            </div>
+
+        </header>
+
+
+        <!-- ================= SUMMARY CARDS ================= -->
+        <section class="summary-cards">
+
+            <div class="card">
+                <span>Total Projects</span>
+                <h2>12</h2>
+                <small>3 Completed</small>
+            </div>
+
+            <div class="card">
+                <span>In Progress</span>
+                <h2>7</h2>
+                <small>↑ 2 from last week</small>
+            </div>
+
+            <div class="card">
+                <span>Completed Tasks</span>
+                <h2>28</h2>
+                <small>↑ 12 from last week</small>
+            </div>
+
+            <div class="card">
+                <span>Total Tasks</span>
+                <h2>73</h2>
+                <small>45 To Do</small>
+            </div>
+
+            <div class="card">
+                <span>Team Members</span>
+                <h2>16</h2>
+                <small>5 Online</small>
+            </div>
+
+        </section>
+
+
+        <!-- ================= KANBAN ================= -->
+        <section class="section">
+
+            <div class="section-header">
+                <h2>Kanban Board</h2>
+
+                <select>
+                    <option>Website Redesign</option>
+                    <option>Mobile App</option>
+                    <option>College Portal</option>
+                </select>
+            </div>
+
+
+            <div class="kanban">
+
+                <!-- TO DO -->
+                <div class="kanban-column todo">
+
+                    <h3>To Do <span>4</span></h3>
+
+                    <div class="task">
+                        <strong>Create landing page wireframe</strong>
+                        <small>Design</small>
+                        <footer>👤 Aryan <span>20 May</span></footer>
+                    </div>
+
+                    <div class="task">
+                        <strong>Setup development environment</strong>
+                        <small>DevOps</small>
+                        <footer>👤 Rohit <span>21 May</span></footer>
+                    </div>
+
+                    <div class="task">
+                        <strong>Research competitor websites</strong>
+                        <small>Research</small>
+                        <footer>👤 Neha <span>22 May</span></footer>
+                    </div>
+
+                    <button class="add-task">＋ Add Task</button>
+
+                </div>
+
+
+                <!-- IN PROGRESS -->
+                <div class="kanban-column progress">
+
+                    <h3>In Progress <span>4</span></h3>
+
+                    <div class="task">
+                        <strong>Implement authentication</strong>
+                        <small>Backend</small>
+                        <footer>👤 Rohit <span>18 May</span></footer>
+                    </div>
+
+                    <div class="task">
+                        <strong>Develop REST APIs</strong>
+                        <small>Backend</small>
+                        <footer>👤 Karan <span>20 May</span></footer>
+                    </div>
+
+                    <div class="task">
+                        <strong>Build responsive UI</strong>
+                        <small>Frontend</small>
+                        <footer>👤 Ankit <span>21 May</span></footer>
+                    </div>
+
+                    <button class="add-task">＋ Add Task</button>
+
+                </div>
+
+
+                <!-- IN REVIEW -->
+                <div class="kanban-column review">
+
+                    <h3>In Review <span>3</span></h3>
+
+                    <div class="task">
+                        <strong>Homepage UI design</strong>
+                        <small>Design</small>
+                        <footer>👤 Neha <span>17 May</span></footer>
+                    </div>
+
+                    <div class="task">
+                        <strong>User profile page</strong>
+                        <small>Frontend</small>
+                        <footer>👤 Aryan <span>18 May</span></footer>
+                    </div>
+
+                    <div class="task">
+                        <strong>API integration</strong>
+                        <small>Backend</small>
+                        <footer>👤 Karan <span>19 May</span></footer>
+                    </div>
+
+                    <button class="add-task">＋ Add Task</button>
+
+                </div>
+
+
+                <!-- DONE -->
+                <div class="kanban-column done">
+
+                    <h3>Done <span>6</span></h3>
+
+                    <div class="task">
+                        <strong>Project requirements</strong>
+                        <small>Planning</small>
+                        <footer>✓ Completed <span>10 May</span></footer>
+                    </div>
+
+                    <div class="task">
+                        <strong>Team kickoff meeting</strong>
+                        <small>Meeting</small>
+                        <footer>✓ Completed <span>11 May</span></footer>
+                    </div>
+
+                    <div class="task">
+                        <strong>Logo design</strong>
+                        <small>Design</small>
+                        <footer>✓ Completed <span>13 May</span></footer>
+                    </div>
+
+                    <button class="add-task">＋ Add Task</button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= LOWER SECTION ================= -->
+
+        <div class="lower-grid">
+
+            <!-- GANTT -->
+            <section class="panel">
+
+                <h2>Timeline / Gantt Chart</h2>
+
+                <div class="gantt">
+
+                    <div class="gantt-row">
+                        <span>Project Planning</span>
+                        <div class="bar purple"></div>
+                    </div>
+
+                    <div class="gantt-row">
+                        <span>Research & Analysis</span>
+                        <div class="bar blue"></div>
+                    </div>
+
+                    <div class="gantt-row">
+                        <span>UI/UX Design</span>
+                        <div class="bar orange"></div>
+                    </div>
+
+                    <div class="gantt-row">
+                        <span>Frontend Development</span>
+                        <div class="bar green"></div>
+                    </div>
+
+                    <div class="gantt-row">
+                        <span>Backend Development</span>
+                        <div class="bar red"></div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SPRINT -->
+            <section class="panel">
+
+                <h2>Sprint Planning</h2>
+
+                <h3>Sprint 3</h3>
+
+                <div class="progress-bar">
+                    <div></div>
+                </div>
+
+                <p>66% completed</p>
+
+                <h4>Sprint Goal</h4>
+
+                <p>Implement core features and improve user experience.</p>
+
+                <ul>
+                    <li>✓ Implement authentication</li>
+                    <li>✓ Build dashboard UI</li>
+                    <li>✓ Develop REST APIs</li>
+                    <li>□ Integrate frontend with APIs</li>
+                </ul>
+
+            </section>
+
+
+            <!-- PROJECT OVERVIEW -->
+            <section class="panel overview">
+
+                <h2>Project Overview</h2>
+
+                <div class="circle">
+                    <strong>73%</strong>
+                    <span>Overall Progress</span>
+                </div>
+
+                <p>🟢 Completed: 38%</p>
+                <p>🔵 In Progress: 37%</p>
+                <p>🟠 In Review: 14%</p>
+                <p>🟣 To Do: 11%</p>
+
+            </section>
+
+        </div>
+
+
+        <!-- ================= BOTTOM ================= -->
+
+        <div class="bottom-grid">
+
+            <section class="panel">
+
+                <h2>Upcoming Deadlines</h2>
+
+                <p>🔴 Implement authentication <span>18 May</span></p>
+                <p>🔴 API integration <span>19 May</span></p>
+                <p>🔴 User profile page <span>20 May</span></p>
+                <p>🔴 Landing page wireframe <span>22 May</span></p>
+
+            </section>
+
+
+            <section class="panel">
+
+                <h2>Recent Activity</h2>
+
+                <p>👤 Rohit moved <b>API integration</b> to In Review</p>
+                <p>📄 Neha uploaded a project file</p>
+                <p>💬 Aryan commented on a task</p>
+                <p>✓ Ankit completed Logo design</p>
+
+            </section>
+
+
+            <section class="panel">
+
+                <h2>Key Features</h2>
+
+                <div class="features">
+
+                    <div>📌 Drag & Drop</div>
+                    <div>📊 Gantt Chart</div>
+                    <div>👥 Team Collaboration</div>
+                    <div>⏱ Sprint Planning</div>
+                    <div>📎 File Attachments</div>
+                    <div>🔔 Notifications</div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- JavaScript -->
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
